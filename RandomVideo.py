@@ -6,11 +6,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 import random
 
+youtuber = input('Enter a youtuber: ')
+
 driver = webdriver.Chrome(executable_path=r"C:\Program Files (x86)\ChromeDriver\chromedriver.exe")
 driver.get('https://www.youtube.com/')
 
 element = driver.find_element_by_name("search_query")
-element.send_keys('Pewdipie', Keys.ENTER)
+element.send_keys(youtuber, Keys.ENTER)
 
 # driver.find_element_by_xpath('//*[@id="avatar-section"]/a').click()
 driver.find_element_by_tag_name('ytd-channel-renderer').click()
